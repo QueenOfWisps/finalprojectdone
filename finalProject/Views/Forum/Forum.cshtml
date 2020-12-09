@@ -1,0 +1,39 @@
+﻿@model List<ForumModel>
+@{
+    ViewData["Title"] = "Forum";
+}
+
+<h1 class="display-4">Filter Reviews</h1>
+Enter a Name
+<form method="post" class="container">
+    <div class="row p-2">
+        <label for="Name" class="control-label col-md-1">Name</label>
+        <input name="Name" class="form-control col-md-6" />
+    </div>
+    <div class="row p-2">
+        <button type="submit" class="form-control btn btn-dark col-2">Submit</button>
+        <a asp-action="Forum" class="btn btn-secondary col-3">Reset</a>
+    </div>
+</form>
+
+<h2>Welcome to the forum darling.</h2>
+@foreach (ForumModel post in Model)
+{
+    <strong>Title: </strong>
+    <br />
+    @post.Title
+    <br />
+    <strong>Name:</strong>
+    <br />
+    @post.F_user.Name
+    <br />
+    <strong>Quiz Score:</strong>
+    <br />
+    @post.F_score
+    <br />
+    <strong>Text:</strong>
+    <br />
+    @post.Text
+    <br />
+
+}

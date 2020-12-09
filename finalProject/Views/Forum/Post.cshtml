@@ -1,0 +1,22 @@
+﻿@model FinalProject.Models.ForumModel
+@{
+    ViewData["Title"] = "Post";
+}
+
+<form method="post">
+    <label asp-for="Title"></label><br />
+    <input asp-for="Title" /><br />
+
+    <label asp-for="F_user.Name">Name</label><br />
+    <input asp-for="F_user.Name" /><br />
+    <label asp-for="Text">Post</label><br />
+    <textarea asp-for="Text" placeholder="Write post here">
+</textarea><br />
+
+    <button class="m-2 btn btn-primary" type="submit">Submit</button>
+</form>
+<br />
+<hr />
+
+
+<h1>here is a link to the <a asp-controller="Forum" asp-action="Forum">Forum</a></h1>

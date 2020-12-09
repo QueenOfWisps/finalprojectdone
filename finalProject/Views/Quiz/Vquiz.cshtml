@@ -1,0 +1,47 @@
+﻿@model QuizTools
+
+    @{ ViewData["Title"] = "Quiz";
+    }
+ 
+
+<div>
+    <h1 class="display-4">La Quiz</h1>
+    <p>This quiz will contain 7 questions and will give you a score than you can then use to post on your forum.</p>
+    <p>you must enter one of the options above the question no caps please love.</p>
+
+    <form method="post" class="container">
+
+        <label asp-for="Season" class="control-label">season</label>
+        <label> A:  winter, B:  Spring,C: summer,D: fall </label>
+        <input asp-for="Season" type="text" class="form-control pb-1" />
+        <label>A:  tree,B: bush,C: succulent,D: cactus, </label>
+        <label asp-for="Type" class="control-label">type</label>
+        <input asp-for="Type" type="text" class="form-control pb-1" />
+        <label>A: dry,B: damp,C: wet,D: very wet </label>
+        <label asp-for="Moisture" class="control-label">moisture</label>
+        <input asp-for="Moisture" type="text" class="form-control pb-1" />
+        <label>A: some dead pieces,B: droopy ,C: healthy,D: very healthy </label>
+        <label asp-for="Foilage" class="control-label">foilage</label>
+        <input asp-for="Foilage" type="text" class="form-control pb-1" />
+        <label> yes, no </label>
+        <label asp-for="Fertilizer" class="control-label">fertilizer</label>
+        <input asp-for="Fertilizer" type="text" class="form-control pb-1" />
+        <label> A: very little, B: little,C: Some, D: Alot </label>
+        <label asp-for="Sunlight" class="control-label">sunlight</label>
+        <input asp-for="Sunlight" type="text" class="form-control pb-1" />
+        <label>A: Black dots,B:infested with bugs,C: holes in plants, D: all or some of the above</label>
+        <label asp-for="Parasites" class="control-label">parasites</label>
+        <input asp-for="Parasites" type="text" class="form-control pb-1" />
+
+        <br />
+
+        <br />
+        <input type="submit" class="form-control btn" />
+    </form>
+
+    <label asp-for="Score" class="control-label">Score</label>
+    <label class="control-label">@Model.Score</label>
+
+    <h1>here is a link to your <a asp-controller="Quiz" asp-action="QuizResult">Results</a></h1>
+
+</div>
